@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "852152682811",
+    "firebase_url": "https://how-app-2018.firebaseio.com",
+    "project_id": "how-app-2018",
+    "storage_bucket": "how-app-2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852152682811:android:a17fe2f88348324b",
+        "android_client_info": {
+          "package_name": "com.brightstars.android.how"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852152682811-44569imsadib8or0i10s45922105g7dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDskO1YB7bhaHvLuYygC4XZnkhW8XX7-wI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
