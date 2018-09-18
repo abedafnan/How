@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Will be sent to server with the user's register info
         Log.d("TOKEN", FirebaseInstanceId.getInstance().getToken());
     }
 }
