@@ -4,4 +4,12 @@
     <!--main activity strings-->
     <string name="hello_world">Hello World!</string>
 
+    <!--change password activity strings-->
+    <string name="prompt_current_pass">Current Password</string>
+    <string name="prompt_new_pass">New Password</string>
+    <string name="prompt_confirm_pass">Confirm New Password</string>
+
+    <!--menu item titles' text-->
+    <string name="menu_item_done">Done</string>
+
 </resources>
