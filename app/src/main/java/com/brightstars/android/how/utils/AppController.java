@@ -1,4 +1,4 @@
-package com.brightstars.android.how.app;
+package com.brightstars.android.how.utils;
 
 import android.app.Application;
 

@@ -1,11 +1,8 @@
-package com.brightstars.android.how.ui;
+package com.brightstars.android.how;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.brightstars.android.how.MainActivity;
-import com.brightstars.android.how.R;
 
 public class SplashActivity extends AppCompatActivity {
 
