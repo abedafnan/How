@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.brightstars.android.how.NotificationsActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/notifications_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:stateListAnimator="@null"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+</LinearLayout>

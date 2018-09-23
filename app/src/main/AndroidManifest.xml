@@ -31,6 +31,9 @@
         </service>
 
         <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".TermsPrivacyActivity" />
+        <activity android:name=".NotificationsActivity" />
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>

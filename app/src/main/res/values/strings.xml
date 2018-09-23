@@ -11,5 +11,13 @@
 
     <!--menu item titles' text-->
     <string name="menu_item_done">Done</string>
+    <string name="menu_item_account">Account</string>
+    <string name="menu_item_settings">Settings</string>
+    <string name="menu_item_terms_privacy">Terms and Privacy</string>
+    <string name="menu_item_help_feedback">Help and feedback</string>
+    <string name="menu_item_sign_out">Sign out</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_notifications">NotificationsActivity</string>
 
 </resources>
