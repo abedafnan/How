@@ -23,4 +23,7 @@
 
     <string name="text_view_sign_in">Sign in</string>
     <string name="text_view_log_in">Log in</string>
+
+    <string name="title_categories">Categories</string>
+    <string name="title_most_watched">Most watched</string>
 </resources>
