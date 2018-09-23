@@ -17,13 +17,11 @@
     <string name="menu_item_help_feedback">Help and feedback</string>
     <string name="menu_item_sign_out">Sign out</string>
 
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_notifications">NotificationsActivity</string>
-
-
-    <string name="text_view_sign_in">Sign in</string>
-    <string name="text_view_log_in">Log in</string>
-
     <string name="title_categories">Categories</string>
     <string name="title_most_watched">Most watched</string>
+
+    <!--main activity strings-->
+    <string name="text_sign_in">Sign In</string>
+    <string name="text_sign_up">Sign Up</string>
+
 </resources>
