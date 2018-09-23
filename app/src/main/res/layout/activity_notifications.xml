@@ -13,6 +13,6 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:stateListAnimator="@null"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 </LinearLayout>
