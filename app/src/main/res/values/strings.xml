@@ -24,4 +24,8 @@
     <string name="text_sign_in">Sign In</string>
     <string name="text_sign_up">Sign Up</string>
 
+
+    <!--row of items -->
+    <string name="text_place_holder">Place Holder</string>
+
 </resources>
