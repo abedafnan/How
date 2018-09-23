@@ -40,10 +40,17 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
+        // When the search icon is pressed
         if (id == R.id.action_search) {
-
+            search();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    // Go to the SearchActivity
+    public void search() {
+        Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+        startActivity(intent);
     }
 
 }

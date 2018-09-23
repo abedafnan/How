@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">How</string>
-    
+
     <!--change password activity strings-->
     <string name="prompt_current_pass">Current Password</string>
     <string name="prompt_new_pass">New Password</string>
