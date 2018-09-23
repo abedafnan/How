@@ -42,9 +42,19 @@ public class NotificationsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_account) {
+        // When a menu item is pressed
+        switch (id) {
+            case R.id.action_account:
 
+            case R.id.action_settings:
+
+            case R.id.action_terms_privacy:
+
+            case R.id.action_help_feedback:
+
+            case R.id.action_sign_out:
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
