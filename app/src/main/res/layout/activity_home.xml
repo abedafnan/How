@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.brightstars.android.how.HomeActivity">
@@ -16,74 +17,18 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_below="@id/home_toolbar"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_below="@id/home_toolbar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/horizontal_margin"
-            android:text="@string/title_categories"
-            android:textSize="24sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/horizontal_margin"
-            android:text="@string/title_interests"
-            android:textSize="24sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_interests"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/horizontal_margin"
-            android:text="@string/title_most_watched"
-            android:textSize="24sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_most_watched"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-
-        </android.support.v7.widget.RecyclerView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/horizontal_margin"
-            android:text="@string/title_suggestions"
-            android:textSize="24sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_suggestions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-
-    </LinearLayout>
-
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
 
 </RelativeLayout>
