@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.brightstars.android.how.TermsPrivacyActivity">
+    android:orientation="vertical"
+    tools:context="com.brightstars.android.how.HelpFeedbackActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/terms_privacy_toolbar"
+        android:id="@+id/help_feedback_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -19,6 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="Here Will Be the privacy terms"/>
+        android:text="Here Will Be the help and feedback"/>
 
 </LinearLayout>

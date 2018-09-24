@@ -1,10 +1,10 @@
-package com.brightstars.android.how.data;
+package com.brightstars.android.how.models;
 
 import android.widget.ImageView;
 
 public class Item {
 
-    private ImageView image;
+    private String image;
     private String title;
 
 
@@ -12,7 +12,7 @@ public class Item {
         this.title = title;
     }
 
-    public Item(String title , ImageView image) {
+    public Item(String title , String image) {
         this.title = title;
         this.image = image;
     }
@@ -25,11 +25,11 @@ public class Item {
         this.title = title;
     }
 
-    public ImageView getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(ImageView image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

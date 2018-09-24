@@ -1,31 +1,27 @@
 package com.brightstars.android.how.recyclerAdapters;
-import android.content.Context;
+
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.brightstars.android.how.R;
-import com.brightstars.android.how.data.Item;
+import com.brightstars.android.how.models.Item;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class RecyclerAdapterCategory  extends RecyclerView.Adapter<RecyclerAdapterCategory.ViewHolder> {
+public class RecyclerAdapterCategory extends RecyclerView.Adapter<RecyclerAdapterCategory.ViewHolder> {
 
-    CustomItemClickListener mCallback;
-    Context mContext;
-    View rootView;
-    private List<Item> mItem;
-    int positionItem;
+    private CustomItemClickListener mCallback;
+    private View rootView;
+    private ArrayList<Item> mItems;
 
-    public RecyclerAdapterCategory(Context mContext, ArrayList<Item> items, CustomItemClickListener listener) {
-        this.mItem = items;
-        this.mContext = mContext;
+    public RecyclerAdapterCategory(ArrayList<Item> items, CustomItemClickListener listener) {
+        this.mItems = items;
         mCallback = listener;
     }
-
 
     @NonNull
     @Override
@@ -46,40 +42,32 @@ public class RecyclerAdapterCategory  extends RecyclerView.Adapter<RecyclerAdapt
         return viewHolder;
     }
 
-
-
     public interface CustomItemClickListener {
         void onItemClick(View view, int position);
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterCategory.ViewHolder holder, int position) {
-
-        positionItem=position;
-        Item item = mItem.get(position);
+        Item item = mItems.get(position);
         holder.textView_title.setText(item.getTitle());
 
+        // TODO: use picasso library to load images
     }
 
     @Override
     public int getItemCount() {
-        return mItem.size();
+        return mItems.size();
     }
 
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView_title;
-        // to define what is inside every row :
+
+        // Define what is inside every row
         public ViewHolder(View rootView) {
             super(rootView);
-            textView_title=rootView.findViewById(R.id.textView_item);
+            textView_title = rootView.findViewById(R.id.textView_itemCategory);
 
         }
-
-
     }
-
-
-
 }
