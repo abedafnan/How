@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.brightstars.android.how.models.Item;
 import com.brightstars.android.how.fragments.AccountFragment;
 import com.brightstars.android.how.fragments.HomeFragment;
 import com.brightstars.android.how.fragments.NotificationsFragment;
@@ -61,7 +62,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.home_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("How ?");
 
         // Will be sent to server with the user's register info
         Log.d("TOKEN", FirebaseInstanceId.getInstance().getToken());
@@ -100,17 +100,12 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.action_account:
 
             case R.id.action_settings:
-                settings();
-                break;
+
             case R.id.action_terms_privacy:
-                privacyAndTerms();
-                break;
+
             case R.id.action_help_feedback:
-                helpAndFeedback();
-                break;
+
             case R.id.action_sign_out:
-                signOut();
-                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -119,27 +114,6 @@ public class HomeActivity extends AppCompatActivity {
     // Go to the SearchActivity
     public void search() {
         Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
-        startActivity(intent);
-    }
-
-    public void settings() {
-        Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void privacyAndTerms() {
-        Intent intent = new Intent(HomeActivity.this, TermsPrivacyActivity.class);
-        startActivity(intent);
-    }
-
-    public void helpAndFeedback() {
-        Intent intent = new Intent(HomeActivity.this, HelpFeedbackActivity.class);
-        startActivity(intent);
-    }
-
-    public void signOut() {
-        // TODO: edit the backstack
-        Intent intent = new Intent(HomeActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
