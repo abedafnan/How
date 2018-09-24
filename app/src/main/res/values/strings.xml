@@ -32,4 +32,16 @@
     <string name="title_account">Account</string>
     <string name="title_notifications">Notifications</string>
 
+    <!--generated text for terms/privacy and help/feedback-->
+    <string name="loremParagraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Etiam non lacinia eros. In et urna sit amet dui tempus consectetur luctus quis quam.
+        Vivamus accumsan nunc in tortor elementum laoreet.</string>
+    <string name="loremParagraph2">Vivamus ac nisl velit. Orci varius natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus. Suspendisse potenti.</string>
+    <string name="loremlist1">1. Ut nec purus eget nulla sodales ullamcorper.</string>
+    <string name="loremlist2">2. Donec ultricies diam quis arcu blandit porta.</string>
+    <string name="loremlist3">3. Nullam vitae ipsum scelerisque elit fermentum fringilla.</string>
+    <string name="loremlist4">4. Morbi a sapien consequat, maximus dolor quis, aliquam nulla.</string>
+    <string name="loremlist5">5. Mauris luctus erat quis risus venenatis tristique eget scelerisque diam.</string>
+
 </resources>
