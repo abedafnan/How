@@ -62,6 +62,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.home_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("How ?");
 
         // Will be sent to server with the user's register info
         Log.d("TOKEN", FirebaseInstanceId.getInstance().getToken());
@@ -97,24 +98,47 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.action_search:
                 search();
                 break;
-            case R.id.action_account:
-
             case R.id.action_settings:
-
+                settings();
+                break;
             case R.id.action_terms_privacy:
-
+                privacyAndTerms();
+                break;
             case R.id.action_help_feedback:
-
+                helpAndFeedback();
+                break;
             case R.id.action_sign_out:
+                signOut();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
     // Go to the SearchActivity
-    public void search() {
+    private void search() {
         Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
         startActivity(intent);
+    }
+
+    private void settings() {
+        Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+        startActivity(intent);
+    }
+    private void privacyAndTerms() {
+        Intent intent = new Intent(HomeActivity.this, TermsPrivacyActivity.class);
+        startActivity(intent);
+    }
+    private void helpAndFeedback() {
+        Intent intent = new Intent(HomeActivity.this, HelpFeedbackActivity.class);
+        startActivity(intent);
+    }
+    private void signOut() {
+        // TODO: edit the loggedIn shared preferences
+        Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 
 }

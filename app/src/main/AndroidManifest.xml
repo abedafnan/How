@@ -45,8 +45,18 @@
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".HelpFeedbackActivity"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpFeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -10,26 +10,20 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button signInButton;
-    Button signUpButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        signInButton = findViewById(R.id.button_signIn);
-        signUpButton = findViewById(R.id.button_signUp);
-
     }
 
     public void signIn(View view) {
-        // Temporary for testing
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent intent = new Intent(MainActivity.this, SignInActivity.class);
         startActivity(intent);
     }
 
     public void signUp(View view) {
-
+        Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+        startActivity(intent);
     }
 }
