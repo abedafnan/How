@@ -14,15 +14,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.brightstars.android.how.data.Item;
 import com.brightstars.android.how.fragments.AccountFragment;
 import com.brightstars.android.how.fragments.HomeFragment;
 import com.brightstars.android.how.fragments.NotificationsFragment;
 import com.google.firebase.iid.FirebaseInstanceId;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements HomeFragment.ItemClickListener{
 
     Bundle bundle = new Bundle();
     Fragment fragment;
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -116,4 +119,8 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onItemClicked(Item item) {
+
+    }
 }

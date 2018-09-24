@@ -67,17 +67,13 @@ public class RecyclerAdapterCategory  extends RecyclerView.Adapter<RecyclerAdapt
         return mItem.size();
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView_title;
         // to define what is inside every row :
         public ViewHolder(View rootView) {
             super(rootView);
-            textView_title=rootView.findViewById(R.id.textView_item);
-
+            textView_title=rootView.findViewById(R.id.textView_itemCategory);
         }
-
-
     }
 
 
