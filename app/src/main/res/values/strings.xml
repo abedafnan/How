@@ -26,9 +26,10 @@
 
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
-    <string name="title_activity_main_bottom_nav">MainBottomNav</string>
+
+    <!--bottom navigation menu items' titles-->
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_account">Account</string>
     <string name="title_notifications">Notifications</string>
 
 </resources>

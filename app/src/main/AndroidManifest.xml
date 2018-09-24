@@ -13,10 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashStyle">
+            android:theme="@style/SplashStyle"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,13 +31,10 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".TermsPrivacyActivity" />
-        <activity android:name=".NotificationsActivity" />
-        <activity android:name=".SearchActivity" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_main_bottom_nav"></activity>
+        <activity android:name=".ChangePasswordActivity" android:screenOrientation="portrait" />
+        <activity android:name=".TermsPrivacyActivity" android:screenOrientation="portrait" />
+        <activity android:name=".SearchActivity" android:screenOrientation="portrait" />
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

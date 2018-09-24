@@ -9,7 +9,8 @@
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin_short"
+        android:layout_marginTop="@dimen/horizontal_margin_short"
+        android:layout_marginBottom="@dimen/horizontal_margin_short"
         app:iconifiedByDefault="false"
         app:queryHint="Search" />
 
