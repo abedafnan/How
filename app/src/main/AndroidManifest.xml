@@ -33,8 +33,10 @@
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".TermsPrivacyActivity" />
         <activity android:name=".NotificationsActivity" />
-        <activity android:name=".HomeActivity" />
         <activity android:name=".SearchActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_main_bottom_nav"></activity>
     </application>
 
 </manifest>
