@@ -33,6 +33,10 @@
     <string name="text_have_account">Don\'t have an account?</string>
 
     <!--sign in activity strings-->
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone</string>
 
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
