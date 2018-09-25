@@ -61,7 +61,7 @@ import java.util.List;
 
             positionItem=position;
             Item item = mItem.get(position);
-            holder.textView_title.setText(item.getTitle());
+            holder.imageView_name_item.setText(item.getTitle());
 
         }
 
@@ -71,17 +71,17 @@ import java.util.List;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder{
-            TextView textView_title;
-            TextView textView_time;
-            ImageView imageView_item;
+            ImageView imageView_video_image;
+            TextView textView_video_time;
+            TextView imageView_name_item;
 
 
             // to define what is inside every row :
             public ViewHolder(View rootView) {
                 super(rootView);
-                textView_title = rootView.findViewById(R.id.item_video_image);
-                textView_time = rootView.findViewById(R.id.item_video_name);
-                imageView_item = rootView.findViewById(R.id.item_video_time);
+                imageView_video_image = rootView.findViewById(R.id.item_video_image);
+                imageView_name_item = rootView.findViewById(R.id.item_video_name);
+                textView_video_time = rootView.findViewById(R.id.item_video_time);
             }
         }
 

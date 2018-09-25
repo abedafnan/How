@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.brightstars.android.how.DetailsActivity;
 import com.brightstars.android.how.R;
 import com.brightstars.android.how.data.Item;
 import com.brightstars.android.how.recyclerAdapters.RecyclerAdapterCategory;
@@ -67,19 +68,9 @@ public class HomeFragment extends Fragment {
 
                 String itemChoosed=categoryItem.get(position).getTitle();
                 Toast.makeText(getContext(),itemChoosed,Toast.LENGTH_LONG).show();
-
-
-        /**
-         *
-         * this is a true code . uncomment it after prepairing details recycler adapter and details activity
-         *
-         * :
-                  Intent intent;
-                String itemChoosed=categoryItem.get(position).getTitle();
-                intent = new Intent(getContext(),DetailsActivity.class);
+                Intent intent = new Intent(getContext(),DetailsActivity.class);
                 intent.putExtra(ITEM_CATEGORY_CHOOSED,itemChoosed);
                 getContext().startActivity(intent);
-        */
 
 
             }
