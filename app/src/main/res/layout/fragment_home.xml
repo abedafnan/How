@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_below="@id/home_toolbar"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_below="@id/home_toolbar">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:text="@string/title_categories"
-        android:textSize="24sp" />
+        android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <TextView
+            style="@style/RecyclerTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_categories" />
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:text="@string/title_interests"
-        android:textSize="24sp" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_interests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.RecyclerView>
 
 
+        <TextView
+            style="@style/RecyclerTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_interests" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:text="@string/title_most_watched"
-        android:textSize="24sp" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_interests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_most_watched"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+        </android.support.v7.widget.RecyclerView>
 
 
+        <TextView
+            style="@style/RecyclerTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_most_watched" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/horizontal_margin"
-        android:text="@string/title_suggestions"
-        android:textSize="24sp" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_most_watched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_suggestions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
 
-    </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+        <TextView
+            style="@style/RecyclerTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_suggestions" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_suggestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</ScrollView>
