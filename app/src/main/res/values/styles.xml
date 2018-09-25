@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="primaryButtonColor">@color/colorPrimary</item>
+        <item name="primaryButtonTextColor">@color/textColorPrimaryInverse</item>
+        <item name="textColorPrimary">@color/textColorPrimary</item>
+        <item name="textColorSecondary">@color/textColorSecondary</item>
     </style>
 
     <style name="SplashStyle" parent="Theme.AppCompat.NoActionBar">
@@ -27,9 +32,11 @@
     <style name="ButtonStyle1">
         <item name="android:paddingStart">80dp</item>
         <item name="android:paddingEnd">80dp</item>
-        <item name="android:paddingTop">20dp</item>
-        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:background">?attr/primaryButtonColor</item>
+        <item name="android:textColor">?attr/primaryButtonTextColor</item>
     </style>
 
     <style name="RecyclerTitleStyle">
