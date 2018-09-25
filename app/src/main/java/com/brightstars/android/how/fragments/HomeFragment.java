@@ -21,56 +21,156 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    // key for intent when he move the details activity to carry the kind item he choosed :
+    // RecyclerViews
+    private RecyclerView categoriesRecyclerView;
+    private RecyclerView interestsRecyclerView;
+    private RecyclerView mostWatchedRecyclerView;
+    private RecyclerView suggestionsRecyclerView;
+    // ArrayLists
+    private ArrayList<Item> categoryItems;
+    private ArrayList<Item> interestsItems;
+    private ArrayList<Item> suggestionItems;
+    private ArrayList<Item> mostWatchedItems;
+    // Adapters
+    private RecyclerAdapterCategory recyclerAdapterCategory;
+    private RecyclerAdapterCategory recyclerAdapterInterests;
+    private RecyclerAdapterCategory recyclerAdapterMostWatched;
+    private RecyclerAdapterCategory recyclerAdapterSuggestions;
+
+    // key for intent when he move the details activity to carry the kind item he chose :
     public static final String ITEM_CATEGORY_CHOOSED = "itemChosen";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        // UI :
+        // UI : Finding views
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        final RecyclerView recyclerView = rootView.findViewById(R.id.recyclerView_categories);
+        categoriesRecyclerView = rootView.findViewById(R.id.recyclerView_categories);
+        interestsRecyclerView = rootView.findViewById(R.id.recyclerView_interests);
+        mostWatchedRecyclerView = rootView.findViewById(R.id.recyclerView_most_watched);
+        suggestionsRecyclerView = rootView.findViewById(R.id.recyclerView_suggestions);
 
-        // Data set :
-        final ArrayList<Item> categoryItem = getCategoryItems();
+        // Data set : Getting data
+        categoryItems = getCategoryItems();
+        interestsItems = getInterestsItems();
+        mostWatchedItems = getMostWatchedItems();
+        suggestionItems = getSuggestionItems();
 
-        // customizing the layout manager :
-        RecyclerView.LayoutManager layoutManager =
-                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
+        // Customizing the layout managers
+        categoriesRecyclerView.setLayoutManager(getLayoutManger());
+        interestsRecyclerView.setLayoutManager(getLayoutManger());
+        mostWatchedRecyclerView.setLayoutManager(getLayoutManger());
+        suggestionsRecyclerView.setLayoutManager(getLayoutManger());
 
-        RecyclerAdapterCategory recyclerAdapterCategory = new RecyclerAdapterCategory(categoryItem,
-                new RecyclerAdapterCategory.CustomItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-
-                String itemChosen = categoryItem.get(position).getTitle();
-                Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
-
-            }
-        });
-        recyclerView.setAdapter(recyclerAdapterCategory);
-
-
-        if (getArguments() != null) {
-            Bundle bundle = getArguments();
-            String name = bundle.getString("key_name");
-            Toast.makeText(getContext(), "You are in " + name, Toast.LENGTH_SHORT).show();
-        }
+        // Setting the adapters
+        categoriesRecyclerView.setAdapter(getCategoryAdapter());
+        interestsRecyclerView.setAdapter(getInterestsAdapter());
+        mostWatchedRecyclerView.setAdapter(getMostWatchedAdapter());
+        suggestionsRecyclerView.setAdapter(getSuggestionAdapter());
 
         return rootView;
     }
 
+    public RecyclerView.LayoutManager getLayoutManger() {
+        return new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+    }
+
+    public RecyclerAdapterCategory getCategoryAdapter() {
+        recyclerAdapterCategory = new RecyclerAdapterCategory(categoryItems,
+                new RecyclerAdapterCategory.CustomItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        String itemChosen = categoryItems.get(position).getTitle();
+                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                    }
+                });
+        return recyclerAdapterCategory;
+    }
+
+    public RecyclerAdapterCategory getInterestsAdapter() {
+        recyclerAdapterInterests = new RecyclerAdapterCategory(categoryItems,
+                new RecyclerAdapterCategory.CustomItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        String itemChosen = interestsItems.get(position).getTitle();
+                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                    }
+                });
+        return recyclerAdapterInterests;
+    }
+
+    public RecyclerAdapterCategory getMostWatchedAdapter() {
+        recyclerAdapterMostWatched = new RecyclerAdapterCategory(categoryItems,
+                new RecyclerAdapterCategory.CustomItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        String itemChosen = mostWatchedItems.get(position).getTitle();
+                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                    }
+                });
+        return recyclerAdapterMostWatched;
+    }
+
+    public RecyclerAdapterCategory getSuggestionAdapter() {
+        recyclerAdapterSuggestions = new RecyclerAdapterCategory(categoryItems,
+                new RecyclerAdapterCategory.CustomItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        String itemChosen = suggestionItems.get(position).getTitle();
+                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                    }
+                });
+        return recyclerAdapterSuggestions;
+    }
+
+
     // The category Items :
     public ArrayList<Item> getCategoryItems() {
-        ArrayList<Item> categoryItems = new ArrayList<>();
+        categoryItems = new ArrayList<>();
         categoryItems.add(new Item("Electrician"));
         categoryItems.add(new Item("Computer"));
         categoryItems.add(new Item("Phone"));
         categoryItems.add(new Item("Carpenter"));
         categoryItems.add(new Item("Plumbing"));
         categoryItems.add(new Item("Painting"));
+
+        return categoryItems;
+    }
+
+    public ArrayList<Item> getInterestsItems() {
+        interestsItems = new ArrayList<>();
+        interestsItems.add(new Item("Electrician"));
+        interestsItems.add(new Item("Computer"));
+        interestsItems.add(new Item("Phone"));
+        interestsItems.add(new Item("Carpenter"));
+        interestsItems.add(new Item("Plumbing"));
+        interestsItems.add(new Item("Painting"));
+
+        return interestsItems;
+    }
+
+    public ArrayList<Item> getMostWatchedItems() {
+        mostWatchedItems = new ArrayList<>();
+        mostWatchedItems.add(new Item("Electrician"));
+        mostWatchedItems.add(new Item("Computer"));
+        mostWatchedItems.add(new Item("Phone"));
+        mostWatchedItems.add(new Item("Carpenter"));
+        mostWatchedItems.add(new Item("Plumbing"));
+        mostWatchedItems.add(new Item("Painting"));
+
+        return mostWatchedItems;
+    }
+
+    public ArrayList<Item> getSuggestionItems() {
+        suggestionItems = new ArrayList<>();
+        suggestionItems.add(new Item("Electrician"));
+        suggestionItems.add(new Item("Computer"));
+        suggestionItems.add(new Item("Phone"));
+        suggestionItems.add(new Item("Carpenter"));
+        suggestionItems.add(new Item("Plumbing"));
+        suggestionItems.add(new Item("Painting"));
+
         return categoryItems;
     }
 

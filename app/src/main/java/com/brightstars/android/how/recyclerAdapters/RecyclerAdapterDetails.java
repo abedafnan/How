@@ -10,25 +10,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.brightstars.android.how.R;
-import com.brightstars.android.how.data.Item;
+import com.brightstars.android.how.models.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-    public class RecyclerAdapterDetails  extends RecyclerView.Adapter<RecyclerAdapterDetails.ViewHolder> {
+    public class RecyclerAdapterDetails extends RecyclerView.Adapter<RecyclerAdapterDetails.ViewHolder> {
 
-        CustomItemClickListener mCallback;
-        Context mContext;
-        View rootView;
-        private List<Item> mItem;
+        private CustomItemClickListener mCallback;
+        private View rootView;
+        private ArrayList<Item> mItem;
         int positionItem;
 
-        public RecyclerAdapterDetails(Context mContext, ArrayList<Item> items, CustomItemClickListener listener) {
+        public RecyclerAdapterDetails(ArrayList<Item> items, CustomItemClickListener listener) {
             this.mItem = items;
-            this.mContext = mContext;
             mCallback = listener;
         }
-
 
         @NonNull
         @Override
@@ -49,8 +46,6 @@ import java.util.List;
             return viewHolder;
         }
 
-
-
         public interface CustomItemClickListener {
             void onItemClick(View view, int position);
 
@@ -59,7 +54,6 @@ import java.util.List;
         @Override
         public void onBindViewHolder(@NonNull RecyclerAdapterDetails.ViewHolder holder, int position) {
 
-            positionItem=position;
             Item item = mItem.get(position);
             holder.textView_title.setText(item.getTitle());
 
@@ -70,7 +64,7 @@ import java.util.List;
             return mItem.size();
         }
 
-        public class ViewHolder extends RecyclerView.ViewHolder{
+        public class ViewHolder extends RecyclerView.ViewHolder {
             TextView textView_title;
             TextView textView_time;
             ImageView imageView_item;
@@ -79,13 +73,11 @@ import java.util.List;
             // to define what is inside every row :
             public ViewHolder(View rootView) {
                 super(rootView);
-                textView_title = rootView.findViewById(R.id.item_video_image);
-                textView_time = rootView.findViewById(R.id.item_video_name);
-                imageView_item = rootView.findViewById(R.id.item_video_time);
+                imageView_item = rootView.findViewById(R.id.item_video_image);
+                textView_title = rootView.findViewById(R.id.item_video_name);
+                textView_time = rootView.findViewById(R.id.item_video_time);
             }
         }
-
-
 
     }
 
