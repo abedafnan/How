@@ -8,9 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="primaryButtonColor">@color/colorPrimary</item>
+        <item name="secondaryButtonColor">@color/secondaryButtonColor</item>
         <item name="primaryButtonTextColor">@color/textColorPrimaryInverse</item>
+
         <item name="textColorPrimary">@color/textColorPrimary</item>
         <item name="textColorSecondary">@color/textColorSecondary</item>
+        <item name="editTextBgColor">@color/editTextBgColor</item>
+        <item name="editTextStrokeColor">@color/editTextStrokeColor</item>
     </style>
 
     <style name="SplashStyle" parent="Theme.AppCompat.NoActionBar">
@@ -23,10 +27,16 @@
 
 
     <style name="EditTextStyle">
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:drawablePadding">16dp</item>
+        <item name="android:paddingStart">16dp</item>
         <item name="android:layout_marginBottom">@dimen/horizontal_margin</item>
+        <item name="android:background">@drawable/edit_text_drawable</item>
+    </style>
+
+    <style name="ButtonStyle2" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/button_drawable</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
     <style name="ButtonStyle1">

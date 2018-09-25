@@ -6,4 +6,8 @@
 
     <attr name="primaryButtonTextColor" format="reference" />
     <attr name="primaryButtonColor" format="reference" />
+    <attr name="secondaryButtonColor" format="reference" />
+
+    <attr name="editTextBgColor" format="reference" />
+    <attr name="editTextStrokeColor" format="reference" />
 </resources>

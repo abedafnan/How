@@ -13,10 +13,15 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
     }
 
-    public void signIn2(View view) {
+    public void signIn(View view) {
         // temporary for testing
         // TODO: implement the backstack
         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void signUp(View view) {
+        Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
 }

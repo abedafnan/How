@@ -3,7 +3,12 @@
     <color name="colorPrimary">#7823cc</color>
     <color name="colorPrimaryDark">#41009a</color>
     <color name="colorAccent">#FFEFD300</color>
+
     <color name="textColorPrimary">#000000</color>
     <color name="textColorSecondary">#929292</color>
     <color name="textColorPrimaryInverse">#ffffff</color>
+    <color name="secondaryButtonColor">#ffffff</color>
+
+    <color name="editTextBgColor">#fafafa</color>
+    <color name="editTextStrokeColor">#eeeeee</color>
 </resources>
