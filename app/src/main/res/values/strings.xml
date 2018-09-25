@@ -16,13 +16,23 @@
 
     <!--home activity strings-->
     <string name="title_categories">Categories</string>
-    <string name="title_most_watched">Most watched</string>
+    <string name="title_most_watched">Most Watched</string>
     <string name="title_interests">Interests</string>
     <string name="title_suggestions">Suggestions</string>
 
     <!--main activity strings-->
     <string name="text_sign_in">Sign In</string>
     <string name="text_sign_up">Sign Up</string>
+
+    <!--sign in activity strings-->
+    <string name="hint_user_name">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="button_sign_in">Sign In</string>
+    <string name="text_forgot_password">Forgot Password?</string>
+    <string name="text_or">OR</string>
+    <string name="text_have_account">Don\'t have an account?</string>
+
+    <!--sign in activity strings-->
 
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
