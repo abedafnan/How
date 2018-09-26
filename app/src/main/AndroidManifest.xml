@@ -58,6 +58,11 @@
         <activity
             android:name=".SignUpActivity"
             android:screenOrientation="portrait" />
+
+        <activity android:name=".DetailsActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
