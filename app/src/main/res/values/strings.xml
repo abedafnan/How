@@ -38,6 +38,9 @@
     <string name="hint_email">Email</string>
     <string name="hint_phone">Phone</string>
 
+    <!--video activity strings-->
+    <string name="text_comment">Write a comment..</string>
+
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
 

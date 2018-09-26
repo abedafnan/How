@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.brightstars.android.how.DetailsActivity;
 import com.brightstars.android.how.R;
+import com.brightstars.android.how.VideoActivity;
 import com.brightstars.android.how.models.Item;
 import com.brightstars.android.how.recyclerAdapters.RecyclerAdapterCategory;
 
@@ -83,59 +84,70 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = categoryItems.get(position).getTitle();
-                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getContext(),DetailsActivity.class);
-                        intent.putExtra(ITEM_CATEGORY_CHOOSED,itemChosen);
-                        getContext().startActivity(intent);
+                        // Go to the categories' details
+                        Intent intent = new Intent(getContext(), DetailsActivity.class);
+                        intent.putExtra(ITEM_CATEGORY_CHOOSED, itemChosen);
+                        startActivity(intent);
                     }
                 });
         return recyclerAdapterCategory;
     }
 
     public RecyclerAdapterCategory getInterestsAdapter() {
-        recyclerAdapterInterests = new RecyclerAdapterCategory(categoryItems,
+        recyclerAdapterInterests = new RecyclerAdapterCategory(interestsItems,
                 new RecyclerAdapterCategory.CustomItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = interestsItems.get(position).getTitle();
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                        // open video screen
+                        Intent intent = new Intent(getContext(), VideoActivity.class);
+                        intent.putExtra("key_video_name", "Video Name"); // video name to be taken from API
+                        startActivity(intent);
                     }
                 });
         return recyclerAdapterInterests;
     }
 
     public RecyclerAdapterCategory getMostWatchedAdapter() {
-        recyclerAdapterMostWatched = new RecyclerAdapterCategory(categoryItems,
+        recyclerAdapterMostWatched = new RecyclerAdapterCategory(mostWatchedItems,
                 new RecyclerAdapterCategory.CustomItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = mostWatchedItems.get(position).getTitle();
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                        // open video screen
+                        Intent intent = new Intent(getContext(), VideoActivity.class);
+                        intent.putExtra("key_video_name", "Video Name");
+                        startActivity(intent);
                     }
                 });
         return recyclerAdapterMostWatched;
     }
 
     public RecyclerAdapterCategory getSuggestionAdapter() {
-        recyclerAdapterSuggestions = new RecyclerAdapterCategory(categoryItems,
+        recyclerAdapterSuggestions = new RecyclerAdapterCategory(suggestionItems,
                 new RecyclerAdapterCategory.CustomItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = suggestionItems.get(position).getTitle();
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                        // open video screen
+                        Intent intent = new Intent(getContext(), VideoActivity.class);
+                        intent.putExtra("key_video_name", "Video Name");
+                        startActivity(intent);
                     }
                 });
         return recyclerAdapterSuggestions;
     }
 
-
     // The category Items :
     public ArrayList<Item> getCategoryItems() {
         categoryItems = new ArrayList<>();
-        categoryItems.add(new Item("Electrician"));
+        categoryItems.add(new Item("Electronics"));
         categoryItems.add(new Item("Computer"));
         categoryItems.add(new Item("Phone"));
-        categoryItems.add(new Item("Carpenter"));
+        categoryItems.add(new Item("Carpentering"));
         categoryItems.add(new Item("Plumbing"));
         categoryItems.add(new Item("Painting"));
 
@@ -144,38 +156,38 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<Item> getInterestsItems() {
         interestsItems = new ArrayList<>();
-        interestsItems.add(new Item("Electrician"));
-        interestsItems.add(new Item("Computer"));
-        interestsItems.add(new Item("Phone"));
-        interestsItems.add(new Item("Carpenter"));
-        interestsItems.add(new Item("Plumbing"));
-        interestsItems.add(new Item("Painting"));
+        interestsItems.add(new Item("Video1"));
+        interestsItems.add(new Item("Video2"));
+        interestsItems.add(new Item("Video3"));
+        interestsItems.add(new Item("Video4"));
+        interestsItems.add(new Item("Video5"));
+        interestsItems.add(new Item("Video6"));
 
         return interestsItems;
     }
 
     public ArrayList<Item> getMostWatchedItems() {
         mostWatchedItems = new ArrayList<>();
-        mostWatchedItems.add(new Item("Electrician"));
-        mostWatchedItems.add(new Item("Computer"));
-        mostWatchedItems.add(new Item("Phone"));
-        mostWatchedItems.add(new Item("Carpenter"));
-        mostWatchedItems.add(new Item("Plumbing"));
-        mostWatchedItems.add(new Item("Painting"));
+        mostWatchedItems.add(new Item("Video1"));
+        mostWatchedItems.add(new Item("Video2"));
+        mostWatchedItems.add(new Item("Video3"));
+        mostWatchedItems.add(new Item("Video4"));
+        mostWatchedItems.add(new Item("Video5"));
+        mostWatchedItems.add(new Item("Video6"));
 
         return mostWatchedItems;
     }
 
     public ArrayList<Item> getSuggestionItems() {
         suggestionItems = new ArrayList<>();
-        suggestionItems.add(new Item("Electrician"));
-        suggestionItems.add(new Item("Computer"));
-        suggestionItems.add(new Item("Phone"));
-        suggestionItems.add(new Item("Carpenter"));
-        suggestionItems.add(new Item("Plumbing"));
-        suggestionItems.add(new Item("Painting"));
+        suggestionItems.add(new Item("Video1"));
+        suggestionItems.add(new Item("Video2"));
+        suggestionItems.add(new Item("Video3"));
+        suggestionItems.add(new Item("Video4"));
+        suggestionItems.add(new Item("Video5"));
+        suggestionItems.add(new Item("Video6"));
 
-        return categoryItems;
+        return suggestionItems;
     }
 
 }

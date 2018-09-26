@@ -30,6 +30,7 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
         <item name="android:layout_marginBottom">@dimen/horizontal_margin</item>
         <item name="android:background">@drawable/edit_text_drawable</item>
     </style>
@@ -53,7 +54,7 @@
         <item name="android:layout_marginTop">@dimen/horizontal_margin</item>
         <item name="android:layout_marginStart">@dimen/activity_vertical_margin</item>
         <item name="android:layout_marginEnd">@dimen/activity_vertical_margin</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
 

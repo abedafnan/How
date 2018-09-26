@@ -58,11 +58,10 @@
         <activity
             android:name=".SignUpActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".DetailsActivity">
-
-        </activity>
-
+        <activity
+            android:name=".DetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".VideoActivity"></activity>
     </application>
 
 </manifest>

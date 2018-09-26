@@ -24,92 +24,105 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.details_toolbar);
-        toolbar.setTitle("Categories");
-        setSupportActionBar(toolbar);
+
         Bundle bundle = getIntent().getExtras();
-        String itemCategoryChoosed = bundle.getString(ITEM_CATEGORY_CHOOSED);
-        switch (itemCategoryChoosed){
-            case ("Electrician"):
-                items = getElectronicItems();
-                break;
-            case ("Computer"):
-                items=getComputerItems();
-                break;
-            case ("Phone"):
-                items=getPhoneItems();
-                break;
-            case ("Carpenter"):
-                items=getCarpenterItems();
-                break;
-            case ("Plumbing"):
-                items=getPlumbingItems();
-                break;
-            case ("Painting"):
-                items=getPaintingItems();
-                break;
+        String itemCategoryChosen = bundle.getString(ITEM_CATEGORY_CHOOSED);
+
+        Toolbar toolbar = findViewById(R.id.details_toolbar);
+        setSupportActionBar(toolbar);
+        // Displaying the back arrow
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Setting the title of the toolbar
+        getSupportActionBar().setTitle(itemCategoryChosen);
+
+        if (itemCategoryChosen != null) {
+            switch (itemCategoryChosen) {
+                case ("Electronics"):
+                    items = getElectronicItems();
+                    break;
+                case ("Computer"):
+                    items = getComputerItems();
+                    break;
+                case ("Phone"):
+                    items = getPhoneItems();
+                    break;
+                case ("Carpentering"):
+                    items = getCarpenterItems();
+                    break;
+                case ("Plumbing"):
+                    items = getPlumbingItems();
+                    break;
+                case ("Painting"):
+                    items = getPaintingItems();
+                    break;
+            }
+        } else {
+            Toast.makeText(DetailsActivity.this,
+                    "Error loading items because of NPE", Toast.LENGTH_SHORT).show();
         }
         RecyclerView recyclerView = findViewById(R.id.recyclerView_detilsCategory);
-        ;
+
         LinearLayoutManager layoutManager =
-                new LinearLayoutManager(this, LinearLayout.VERTICAL,false);
+                new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                String itemChoosed = items.get(position).getTitle();
-                for(int x = 0 ; x<items.size() ; x++){
-                    if (getCarpenterItems().get(x).getTitle().equals(itemChoosed)){
-                        Toast.makeText(DetailsActivity.this,itemChoosed,Toast.LENGTH_LONG).show();
-                        // open the video which user choosed
-                    }else {
-                        continue;
-                    }
-                }
+                String itemChosen = items.get(position).getTitle();
+                Toast.makeText(DetailsActivity.this, itemChosen, Toast.LENGTH_LONG).show();
+                // TODO : open the video which user chose
             }
         });
         recyclerView.setAdapter(adapter);
     }
+
+    // Code for the back arrow
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     //  To call one of them when he choose a specific item of category
     public ArrayList<Item> getCarpenterItems(){
-        ArrayList<Item> categoryItems = new ArrayList<>();
-        categoryItems.add(new Item("Carpenter1"));
-        categoryItems.add(new Item("Carpenter2"));
-        categoryItems.add(new Item("Carpenter3"));
-        categoryItems.add(new Item("Carpenter4"));
-        categoryItems.add(new Item("Carpenter5"));
-        categoryItems.add(new Item("Carpenter6"));
-        return categoryItems;
+        ArrayList<Item> carpenterItems = new ArrayList<>();
+        carpenterItems.add(new Item("Carpenter1"));
+        carpenterItems.add(new Item("Carpenter2"));
+        carpenterItems.add(new Item("Carpenter3"));
+        carpenterItems.add(new Item("Carpenter4"));
+        carpenterItems.add(new Item("Carpenter5"));
+        carpenterItems.add(new Item("Carpenter6"));
+        return carpenterItems;
     }
     public ArrayList<Item> getComputerItems() {
-        ArrayList<Item> items = new ArrayList<>();
-        items.add(new Item("computer1"));
-        items.add(new Item("computer2"));
-        items.add(new Item("computer3"));
-        items.add(new Item("computer4"));
-        items.add(new Item("computer5"));
-        items.add(new Item("computer6"));
-        return items;
+        ArrayList<Item> computerItems = new ArrayList<>();
+        computerItems.add(new Item("computer1"));
+        computerItems.add(new Item("computer2"));
+        computerItems.add(new Item("computer3"));
+        computerItems.add(new Item("computer4"));
+        computerItems.add(new Item("computer5"));
+        computerItems.add(new Item("computer6"));
+        return computerItems;
     }
     public ArrayList<Item> getElectronicItems(){
-        ArrayList<Item> categoryItems = new ArrayList<>();
-        categoryItems.add(new Item("Electronic1"));
-        categoryItems.add(new Item("Electronic2"));
-        categoryItems.add(new Item("Electronic3"));
-        categoryItems.add(new Item("Electronic4"));
-        categoryItems.add(new Item("Electronic5"));
-        categoryItems.add(new Item("Electronic6"));
-        return categoryItems;
+        ArrayList<Item> electronicItems = new ArrayList<>();
+        electronicItems.add(new Item("Electronic1"));
+        electronicItems.add(new Item("Electronic2"));
+        electronicItems.add(new Item("Electronic3"));
+        electronicItems.add(new Item("Electronic4"));
+        electronicItems.add(new Item("Electronic5"));
+        electronicItems.add(new Item("Electronic6"));
+        return electronicItems;
     }
     public ArrayList<Item> getPaintingItems(){
-        ArrayList<Item> phoneItems = new ArrayList<>();
-        phoneItems.add(new Item("painting1"));
-        phoneItems.add(new Item("painting2"));
-        phoneItems.add(new Item("painting3"));
-        phoneItems.add(new Item("painting5"));
-        phoneItems.add(new Item("painting6"));
-        phoneItems.add(new Item("painting7"));
-        return phoneItems;
+        ArrayList<Item> paintingItems = new ArrayList<>();
+        paintingItems.add(new Item("painting1"));
+        paintingItems.add(new Item("painting2"));
+        paintingItems.add(new Item("painting3"));
+        paintingItems.add(new Item("painting5"));
+        paintingItems.add(new Item("painting6"));
+        paintingItems.add(new Item("painting7"));
+        return paintingItems;
     }
     public ArrayList<Item> getPhoneItems(){
         ArrayList<Item> phoneItems = new ArrayList<>();
