@@ -24,4 +24,9 @@ public class SignInActivity extends AppCompatActivity {
         Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
+
+    public void resetPassword(View view) {
+        Intent intent = new Intent(SignInActivity.this, ForgotPassActivity.class);
+        startActivity(intent);
+    }
 }
