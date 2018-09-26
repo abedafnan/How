@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.brightstars.android.how.DetailsActivity;
 import com.brightstars.android.how.R;
 import com.brightstars.android.how.models.Item;
 import com.brightstars.android.how.recyclerAdapters.RecyclerAdapterCategory;
@@ -83,6 +84,9 @@ public class HomeFragment extends Fragment {
                     public void onItemClick(View view, int position) {
                         String itemChosen = categoryItems.get(position).getTitle();
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getContext(),DetailsActivity.class);
+                        intent.putExtra(ITEM_CATEGORY_CHOOSED,itemChosen);
+                        getContext().startActivity(intent);
                     }
                 });
         return recyclerAdapterCategory;
