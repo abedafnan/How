@@ -12,9 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.brightstars.android.how.listView.AdapterListNotification;
 import com.brightstars.android.how.models.Item;
@@ -147,5 +149,33 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+    // This method will calling after click on name row in fragment account :
+    public void editProfile(View view) {
+        Toast.makeText(this, "Account name clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    // This method will calling after click on list row in fragment account :
+    public void showMyList(View view) {
+        Toast.makeText(this, "List clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    // This method will calling after click on likes row in fragment account :
+    public void showMyLikes(View view) {
+        Toast.makeText(this, "Likes clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    // This method will calling after click on downlods row in fragment account :
+    public void showMyDownloads(View view) {
+        Toast.makeText(this, "Downloads clicked", Toast.LENGTH_SHORT).show();
+    }
+
+
+    // This method will calling after click on history row in fragment account :
+    public void showMyHistory(View view) {
+        Toast.makeText(this, "History clicked", Toast.LENGTH_SHORT).show();
+    }
+
 
 }

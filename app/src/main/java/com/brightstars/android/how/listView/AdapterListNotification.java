@@ -66,7 +66,7 @@ public class AdapterListNotification extends ArrayAdapter<User> {
         CircleImageView circleImage_profilePicture;
         public ViewHolder(View rootView){
             textView_notificationContent = rootView.findViewById(R.id.textView_name);
-            textView_notificationTime=rootView.findViewById(R.id.textView_time);
+            textView_notificationTime=rootView.findViewById(R.id.textView_Time);
             circleImage_profilePicture=rootView.findViewById(R.id.profile_image);
         }
     }

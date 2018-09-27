@@ -67,4 +67,11 @@
     <string name="loremlist4">4. Morbi a sapien consequat, maximus dolor quis, aliquam nulla.</string>
     <string name="loremlist5">5. Mauris luctus erat quis risus venenatis tristique eget scelerisque diam.</string>
 
+    
+    <!-- strings for profile activity list -->
+    <string name="my_list">My List</string>
+    <string name="likes">Likes</string>
+    <string name="download">Download</string>
+    <string name="history">History</string>
+
 </resources>
