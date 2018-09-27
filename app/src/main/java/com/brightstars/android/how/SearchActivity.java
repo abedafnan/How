@@ -9,13 +9,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.brightstars.android.how.recyclerAdapters.SearchAdapter;
+
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
     SearchView searchView;
     ListView listView;
-    ArrayAdapter<String> adapter;
+    SearchAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +30,13 @@ public class SearchActivity extends AppCompatActivity {
 
         // Create the list that will contain video tags to search from
         ArrayList<String> videoTags = new ArrayList<>();
-        // Here we will get the tags data from the server
-        videoTags.add("test");
-        videoTags.add("test");
-        videoTags.add("test");
+        // TODO: get the tags data from the server
+        videoTags.add("abcd tag");
+        videoTags.add("tag test");
+        videoTags.add("tests");
 
         // Create the adapter and set it to the list
-        adapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, videoTags);
+        adapter = new SearchAdapter(this, videoTags);
         listView.setAdapter(adapter);
 
         // Action of clicking on the list item
@@ -46,19 +47,18 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        // TODO: Implement filtering elements according to user input
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                String text = newText;
-//                adapter.filter(text);
-//                return false;}
-//        });
+        // Actions when writing in the SearchView
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.filter(newText);
+                return false;}
+        });
     }
 
 }
