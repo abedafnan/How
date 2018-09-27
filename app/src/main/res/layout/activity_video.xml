@@ -22,14 +22,46 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/video_toolbar"/>
 
-    <!--here will be the icons-->
+    <!--here will be the icons, buttons are for testing-->
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/horizontal_margin_short"
+        android:layout_below="@id/youtube_player_view"
+        android:elevation="4dp"
+        android:stateListAnimator="@null" >
+
+        <Button
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+        <Button
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+        <Button
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        android:layout_below="@id/button_bar"/>
 
     <ListView
         android:id="@+id/comments_listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:divider="@null"
-        android:layout_below="@id/youtube_player_view"
+        android:layout_below="@id/divider_view"
         android:layout_above="@id/comments_editText"/>
 
     <EditText
