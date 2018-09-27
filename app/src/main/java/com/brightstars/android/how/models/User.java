@@ -1,5 +1,13 @@
 package com.brightstars.android.how.models;
 
+import android.support.annotation.NonNull;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 /**
  * Created by Afnan A. A. Abed on 9/24/2018.
  */
@@ -10,6 +18,10 @@ public class User {
     private String lastName;
     private String email;
     private String phone;
+
+    public User(String firstName){
+        this.firstName=firstName;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -41,5 +53,14 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+
+    public static List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            users.add(new User("Name"+i));
+        }
+        return users;
     }
 }
