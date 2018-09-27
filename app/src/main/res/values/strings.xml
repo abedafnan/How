@@ -41,6 +41,12 @@
     <!--video activity strings-->
     <string name="text_comment">Write a comment..</string>
 
+    <!--video activity strings-->
+    <string name="reset_button_text">Reset Password</string>
+    <string name="text_forgot_pass">Forgot Password ?</string>
+    <string name="text_forgot_pass2">We just need your email</string>
+    <string name="text_forgot_pass3">so we can send your reset password</string>
+
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
 
