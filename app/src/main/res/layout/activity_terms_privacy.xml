@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/horizontal_margin"
                 android:text="@string/loremParagraph1"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist1"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist2"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist3"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
                 android:layout_marginBottom="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/horizontal_margin"
                 android:text="@string/loremParagraph2"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist1"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist2"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist3"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist4"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="24dp"
                 android:text="@string/loremlist5"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 

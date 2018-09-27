@@ -1,6 +1,8 @@
 package com.brightstars.android.how;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -65,15 +67,23 @@ public class DetailsActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
         RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 String itemChosen = items.get(position).getTitle();
-                Toast.makeText(DetailsActivity.this, itemChosen, Toast.LENGTH_LONG).show();
-                // TODO : open the video which user chose
+                playVideo(itemChosen);
             }
         });
         recyclerView.setAdapter(adapter);
+    }
+
+    // It will start the video activity when a RecyclerView item is clicked
+    public void playVideo(String videoName) {
+        Intent intent = new Intent(this, VideoActivity.class);
+        intent.putExtra("key_video_name", videoName);
+        // later video id as well
+        startActivity(intent);
     }
 
     // Code for the back arrow

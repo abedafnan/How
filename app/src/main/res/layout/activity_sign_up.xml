@@ -25,6 +25,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/input_first_name"
                 style="@style/EditTextStyle"
                 android:layout_width="0dp"
                 android:layout_marginBottom="@dimen/horizontal_margin_short"
@@ -34,6 +35,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:id="@+id/input_last_name"
                 style="@style/EditTextStyle"
                 android:layout_width="0dp"
                 android:layout_marginBottom="@dimen/horizontal_margin_short"
@@ -45,13 +47,15 @@
         </LinearLayout>
 
         <EditText
+            android:id="@+id/input_phone_number"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_marginBottom="@dimen/horizontal_margin_short"
             android:hint="@string/hint_phone"
-            android:inputType="number" />
+            android:inputType="phone" />
 
         <EditText
+            android:id="@+id/input_email_address"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_marginBottom="@dimen/horizontal_margin_short"
@@ -59,25 +63,43 @@
             android:inputType="textEmailAddress" />
 
         <EditText
+            android:id="@+id/input_password"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_marginBottom="@dimen/horizontal_margin_short"
             android:hint="@string/hint_password"
             android:inputType="textPassword" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="l agree with terms click here" />
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_agreement" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:onClick="checkTerms"
+                android:text="@string/text_terms_privacy"
+                android:textColor="?attr/textColorPrimary"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <Button
+            android:id="@+id/button_signUp2"
             style="@style/ButtonStyle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/horizontal_margin"
             android:gravity="center"
-            android:text="@string/text_sign_up" />
+            android:text="@string/text_sign_up"
+            android:onClick="signUp"/>
 
         <LinearLayout
             android:id="@+id/layout_or"
@@ -122,6 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/horizontal_margin_short"
+            android:layout_marginBottom="@dimen/horizontal_margin"
             android:text="singin with facebook" />
 
     </LinearLayout>

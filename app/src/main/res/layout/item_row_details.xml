@@ -6,7 +6,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginStart="@dimen/vertical_margin_short"
     android:layout_marginEnd="@dimen/vertical_margin_short"
-    app:cardElevation="4dp">
+    app:cardElevation="2dp">
 
     <RelativeLayout
         android:id="@+id/row"

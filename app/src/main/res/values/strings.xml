@@ -25,7 +25,7 @@
     <string name="text_sign_up">Sign Up</string>
 
     <!--sign in activity strings-->
-    <string name="hint_user_name">Username</string>
+    <string name="hint_user_name">Email</string>
     <string name="hint_password">Password</string>
     <string name="button_sign_in">Sign In</string>
     <string name="text_forgot_password">Forgot Password?</string>
@@ -37,6 +37,8 @@
     <string name="hint_last_name">Last Name</string>
     <string name="hint_email">Email</string>
     <string name="hint_phone">Phone</string>
+    <string name="text_agreement">l agree with </string>
+    <string name="text_terms_privacy">Terms and Privacy</string>
 
     <!--video activity strings-->
     <string name="text_comment">Write a comment..</string>
@@ -54,6 +56,20 @@
     <string name="title_home">Home</string>
     <string name="title_account">Account</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--preferences strings-->
+    <string name="key_user_name">user_name_key</string>
+    <string name="key_change_password">change_password_key</string>
+    <string name="key_email">email_key</string>
+    <string name="key_phone">phone_key</string>
+    <string name="key_clear_history">clear_history_key</string>
+    <string name="key_switch_language">switch_language_key</string>
+    <string name="title_user_name">Change Username</string>
+    <string name="title_change_password">Change Password</string>
+    <string name="title_email">Change Email Address</string>
+    <string name="title_phone">Change Phone Number</string>
+    <string name="title_clear_history">Clear History</string>
+    <string name="title_switch_language">English Language</string>
 
     <!--generated text for terms/privacy and help/feedback-->
     <string name="loremParagraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
                         // open video screen
                         Intent intent = new Intent(getContext(), VideoActivity.class);
-                        intent.putExtra("key_video_name", "Video Name"); // video name to be taken from API
+                        intent.putExtra("key_video_name", itemChosen); // video name to be taken from API
                         startActivity(intent);
                     }
                 });
@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
                         // open video screen
                         Intent intent = new Intent(getContext(), VideoActivity.class);
-                        intent.putExtra("key_video_name", "Video Name");
+                        intent.putExtra("key_video_name", itemChosen);
                         startActivity(intent);
                     }
                 });

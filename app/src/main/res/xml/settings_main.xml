@@ -2,35 +2,35 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
-        android:defaultValue="ussername"
-        android:key="key_username"
+        android:defaultValue="username"
+        android:key="@string/key_user_name"
         android:summary="username"
-        android:title="Change Username" />
+        android:title="@string/title_user_name" />
 
     <Preference
-        android:key="key_change_password"
-        android:title="Change Password"/>
+        android:key="@string/key_change_password"
+        android:title="@string/title_change_password"/>
 
     <EditTextPreference
         android:defaultValue="email"
-        android:key="key_email"
+        android:key="@string/key_email"
         android:summary="email"
-        android:title="Change Email" />
+        android:title="@string/title_email" />
 
     <EditTextPreference
         android:defaultValue="phone"
-        android:key="key_phone"
+        android:key="@string/key_phone"
         android:summary="phone"
-        android:title="Change Phone Number" />
+        android:title="@string/title_phone" />
 
     <Preference
-        android:key="key_clear_history"
-        android:title="Clear History"/>
+        android:key="@string/key_clear_history"
+        android:title="@string/title_clear_history"/>
 
     <SwitchPreference
         android:defaultValue="true"
-        android:key="key_switch_language"
+        android:key="@string/key_switch_language"
         android:summary="Change from English to Arabic"
-        android:title="English Language" />
+        android:title="@string/title_switch_language" />
 
 </PreferenceScreen>
