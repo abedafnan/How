@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.brightstars.android.how.models.Item;
-import com.brightstars.android.how.recyclerAdapters.RecyclerAdapterDetails;
+import com.brightstars.android.how.adapters.RecyclerAdapterDetails;
 
 import java.util.ArrayList;
 

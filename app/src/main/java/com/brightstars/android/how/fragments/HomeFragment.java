@@ -1,6 +1,5 @@
 package com.brightstars.android.how.fragments;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +16,7 @@ import com.brightstars.android.how.DetailsActivity;
 import com.brightstars.android.how.R;
 import com.brightstars.android.how.VideoActivity;
 import com.brightstars.android.how.models.Item;
-import com.brightstars.android.how.recyclerAdapters.RecyclerAdapterCategory;
+import com.brightstars.android.how.adapters.RecyclerAdapterCategory;
 
 import java.util.ArrayList;
 

@@ -14,6 +14,8 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:padding="@dimen/horizontal_margin_short"
+        android:layout_marginStart="@dimen/vertical_margin_short"
+        android:layout_marginTop="@dimen/horizontal_margin_short"
         android:src="@drawable/ic_launcher_background" />
 
 
@@ -22,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/vertical_margin_short"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/profile_image"
         android:maxLines="1"
         android:text="Here is the notification"
@@ -31,7 +33,7 @@
 
 
     <TextView
-        android:id="@+id/textView_Time"
+        android:id="@+id/textView_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/profile_image"

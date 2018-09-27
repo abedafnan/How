@@ -1,4 +1,4 @@
-package com.brightstars.android.how.recyclerAdapters;
+package com.brightstars.android.how.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

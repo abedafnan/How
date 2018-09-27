@@ -12,19 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import com.brightstars.android.how.listView.AdapterListNotification;
-import com.brightstars.android.how.models.Item;
 import com.brightstars.android.how.fragments.AccountFragment;
 import com.brightstars.android.how.fragments.HomeFragment;
 import com.brightstars.android.how.fragments.NotificationsFragment;
-import com.brightstars.android.how.models.User;
 import com.google.firebase.iid.FirebaseInstanceId;
-
-import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -56,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
                     bundle.putString("key_name", "Notifications");
                     fragment.setArguments(bundle);
                     loadFragment(fragment);
-
                     return true;
             }
             return false;

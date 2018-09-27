@@ -1,6 +1,5 @@
-package com.brightstars.android.how.recyclerAdapters;
+package com.brightstars.android.how.adapters;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,9 +12,8 @@ import com.brightstars.android.how.R;
 import com.brightstars.android.how.models.Item;
 
 import java.util.ArrayList;
-import java.util.List;
 
-    public class RecyclerAdapterDetails extends RecyclerView.Adapter<RecyclerAdapterDetails.ViewHolder> {
+public class RecyclerAdapterDetails extends RecyclerView.Adapter<RecyclerAdapterDetails.ViewHolder> {
 
         private CustomItemClickListener mCallback;
         private View rootView;
@@ -57,6 +55,7 @@ import java.util.List;
             Item item = mItem.get(position);
             holder.textView_title.setText(item.getTitle());
 
+            // TODO: use picasso library to load images
         }
 
         @Override

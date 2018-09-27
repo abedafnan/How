@@ -19,8 +19,8 @@ public class User {
     private String email;
     private String phone;
 
-    public User(String firstName){
-        this.firstName=firstName;
+    public User(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getFirstName() {
@@ -55,12 +55,4 @@ public class User {
         this.phone = phone;
     }
 
-
-    public static List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            users.add(new User("Name"+i));
-        }
-        return users;
-    }
 }
