@@ -5,13 +5,23 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.widget.ListView;
 
+import com.brightstars.android.how.adapters.AdapterListNotification;
+import com.brightstars.android.how.models.Item;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.YouTubePlayerInitListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VideoActivity extends AppCompatActivity {
+
+    private ListView commentsListView;
+    private List<Item> commentsList;
+    private AdapterListNotification commentsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,11 @@ public class VideoActivity extends AppCompatActivity {
 
         playVideo("6JYIGclVQdw");
 
+
+        commentsListView = findViewById(R.id.comments_listView);
+        commentsList = getAllCooments();
+        commentsAdapter = new AdapterListNotification(this, R.layout.activity_video, commentsList);
+        commentsListView.setAdapter(commentsAdapter);
     }
 
     public void playVideo(final String videoId) {
@@ -54,5 +69,14 @@ public class VideoActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    // TODO: get the comments from API and put them in the list
+    public static List<Item> getAllCooments() {
+        List<Item> users = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            users.add(new Item("Comment " + i));
+        }
+        return users;
     }
 }
