@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ListView;
 
 import com.brightstars.android.how.adapters.AdapterListNotification;
@@ -69,6 +70,18 @@ public class VideoActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    public void addToList(View view) {
+
+    }
+
+    public void addToLikes(View view) {
+
+    }
+
+    public void addToDownloads(View view) {
+
     }
 
     // TODO: get the comments from API and put them in the list

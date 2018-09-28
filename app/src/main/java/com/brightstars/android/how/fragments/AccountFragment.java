@@ -82,31 +82,5 @@ public class AccountFragment extends Fragment {
         return items;
     }
 
-//    // This method will calling after click on name row in fragment account :
-//    public void editProfile(View view) {
-//        Toast.makeText(getContext(), "Account name clicked", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    // This method will calling after click on list row in fragment account :
-//    public void showMyList(View view) {
-//        Toast.makeText(getContext(), "List clicked", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    // This method will calling after click on likes row in fragment account :
-//    public void showMyLikes(View view) {
-//        Toast.makeText(getContext(), "Likes clicked", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    // This method will calling after click on downlods row in fragment account :
-//    public void showMyDownloads(View view) {
-//        Toast.makeText(getContext(), "Downloads clicked", Toast.LENGTH_SHORT).show();
-//    }
-//
-//    // This method will calling after click on history row in fragment account :
-//    public void showMyHistory(View view) {
-//        Toast.makeText(getContext(), "History clicked", Toast.LENGTH_SHORT).show();
-//    }
-
-
 }
 
