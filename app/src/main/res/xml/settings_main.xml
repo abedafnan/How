@@ -2,9 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditTextPreference
-        android:defaultValue="username"
         android:key="@string/key_user_name"
-        android:summary="username"
         android:title="@string/title_user_name" />
 
     <Preference
@@ -12,15 +10,11 @@
         android:title="@string/title_change_password"/>
 
     <EditTextPreference
-        android:defaultValue="email"
         android:key="@string/key_email"
-        android:summary="email"
         android:title="@string/title_email" />
 
     <EditTextPreference
-        android:defaultValue="phone"
         android:key="@string/key_phone"
-        android:summary="phone"
         android:title="@string/title_phone" />
 
     <Preference

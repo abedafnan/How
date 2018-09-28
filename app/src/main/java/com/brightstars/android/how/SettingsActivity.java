@@ -1,8 +1,11 @@
 package com.brightstars.android.how;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.preference.EditTextPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -15,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
@@ -29,41 +33,62 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         getFragmentManager().beginTransaction().replace(android.R.id.content, new MainPreferenceFragment()).commit();
     }
 
-    public static class MainPreferenceFragment extends PreferenceFragment {
-
-        Preference myPref;
+    public static class MainPreferenceFragment extends
+            PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
+            getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
-            // Change password preference click listener
-            myPref = findPreference(getString(R.string.key_change_password));
-            myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            // Change password click listener
+            Preference changePass = findPreference(getString(R.string.key_change_password));
+            changePass.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     changePassword();
                     return true;
                 }
             });
 
-            // Change password preference click listener
-            myPref = findPreference(getString(R.string.key_clear_history));
-            myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            // Change password click listener
+            Preference clearHistory = findPreference(getString(R.string.key_clear_history));
+            clearHistory.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     clearHistory();
                     return true;
                 }
             });
 
-            // gallery EditText change listener
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_user_name)));
+            // Find the username, email and phone preferences
+            EditTextPreference username = (EditTextPreference) findPreference(getString(R.string.key_user_name));
+            EditTextPreference email = (EditTextPreference) findPreference(getString(R.string.key_email));
+            EditTextPreference phone = (EditTextPreference) findPreference(getString(R.string.key_phone));
 
-            // gallery EditText change listener
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_email)));
+            // Get the saved SharedPreferences and set it in the dialog's EditText
+            // TODO: put the user's registered data as the default values
+            SharedPreferences getData = PreferenceManager.getDefaultSharedPreferences(getContext());
+            username.setText(getData.getString(getString(R.string.key_user_name), "My Username"));
+            email.setText(getData.getString(getString(R.string.key_email), "me@example.com"));
+            phone.setText(getData.getString(getString(R.string.key_phone), "0123456"));
 
-            // gallery EditText change listener
-            bindPreferenceSummaryToValue(findPreference(getString(R.string.key_phone)));
+            // Put the preference value as the summary
+            Preference userPref = (EditTextPreference) findPreference(getString(R.string.key_user_name));
+            userPref.setSummary(username.getText());
+            Preference emailPref = (EditTextPreference) findPreference(getString(R.string.key_email));
+            emailPref.setSummary(email.getText());
+            Preference phonePref = (EditTextPreference) findPreference(getString(R.string.key_phone));
+            phonePref.setSummary(phone.getText());
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            Preference pref = findPreference(key);
+
+            if (pref instanceof EditTextPreference) {
+                EditTextPreference editPref = (EditTextPreference) pref;
+                pref.setSummary(editPref.getText());
+            }
         }
 
         public void changePassword() {
@@ -85,39 +110,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             dialog.setNegativeButton("No", null);
             dialog.create().show();
         }
-
-        private static void bindPreferenceSummaryToValue(Preference preference) {
-            preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
-
-            sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
-                    PreferenceManager
-                            .getDefaultSharedPreferences(preference.getContext())
-                            .getString(preference.getKey(), ""));
-        }
-
-        private static Preference.OnPreferenceChangeListener
-                sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                String stringValue = newValue.toString();
-
-                if (preference instanceof EditTextPreference) {
-                    if (preference.getKey().equals("key_user_name")) {
-                        // update the changed gallery name to summary filed
-                        preference.setSummary(stringValue);
-                    } else if (preference.getKey().equals("key_email")) {
-                        // update the changed gallery name to summary filed
-                        preference.setSummary(stringValue);
-                    } else if (preference.getKey().equals("key_phone")) {
-                        // update the changed gallery name to summary filed
-                        preference.setSummary(stringValue);
-                    }
-                } else {
-                    preference.setSummary(stringValue);
-                }
-                return true;
-            }
-        };
     }
 
     private void setupActionBar() {

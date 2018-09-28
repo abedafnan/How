@@ -1,7 +1,9 @@
 package com.brightstars.android.how;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -70,6 +72,20 @@ public class HomeActivity extends AppCompatActivity {
         // Set the home fragment as the default one
         Fragment homeFragment = new HomeFragment();
         loadFragment(homeFragment);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // TEST: Get the updated user data from settings
+        // TODO: Pass the updated data to the server's update function
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String username = preferences.getString(getString(R.string.key_user_name), "");
+        String email = preferences.getString(getString(R.string.key_email), "");
+        String phone = preferences.getString(getString(R.string.key_phone), "");
+        Log.d("Prefs", username);
+        Log.d("Prefs", email);
+        Log.d("Prefs", phone);
     }
 
     private void loadFragment(Fragment fragment) {
