@@ -55,8 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button_signIn2"
                 android:layout_margin="@dimen/horizontal_margin_short"
-                android:text="@string/text_forgot_password"
-                android:onClick="resetPassword"/>
+                android:onClick="resetPassword"
+                android:text="@string/text_forgot_password" />
 
             <LinearLayout
                 android:id="@+id/layout_or"
@@ -97,11 +97,12 @@
 
             </LinearLayout>
 
-            <Button
+            <com.facebook.login.widget.LoginButton
                 android:id="@+id/button_fb_signIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_or"
+                android:onClick="button_fb_signIn"
                 android:text="sign in with facebook" />
 
             <LinearLayout
@@ -123,8 +124,8 @@
                     android:layout_height="wrap_content"
                     android:onClick="signUp"
                     android:text="@string/text_sign_up"
-                    android:textStyle="bold"
-                    android:textColor="?attr/textColorPrimary" />
+                    android:textColor="?attr/textColorPrimary"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

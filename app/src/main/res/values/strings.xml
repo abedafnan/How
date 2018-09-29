@@ -90,4 +90,12 @@
     <string name="download">Download</string>
     <string name="history">History</string>
 
+
+
+    <!-- string to use for connecting to facebook server -->
+
+    <string name="facebook_app_id">332784520852930</string>
+    <string name="fb_login_protocol_scheme">fb332784520852930</string>
+
+
 </resources>
