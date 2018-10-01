@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,6 +39,8 @@ public class HomeFragment extends Fragment {
     private RecyclerAdapterCategory recyclerAdapterMostWatched;
     private RecyclerAdapterCategory recyclerAdapterSuggestions;
 
+    private SwipeRefreshLayout refreshLayout;
+
     // key for intent when he move the details activity to carry the kind item he chose :
     public static final String ITEM_CATEGORY_CHOOSED = "itemChosen";
 
@@ -70,6 +73,17 @@ public class HomeFragment extends Fragment {
         mostWatchedRecyclerView.setAdapter(getMostWatchedAdapter());
         suggestionsRecyclerView.setAdapter(getSuggestionAdapter());
 
+        refreshLayout = rootView.findViewById(R.id.refresh_home);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getCategoryItems();
+                getInterestsItems();
+                getMostWatchedItems();
+                getSuggestionItems();
+                refreshLayout.setRefreshing(false);
+            }
+        });
         return rootView;
     }
 

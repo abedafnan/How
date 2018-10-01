@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@id/home_toolbar">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            style="@style/RecyclerTitleStyle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_categories" />
+            android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_categories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <TextView
+                style="@style/RecyclerTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_categories" />
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-
-        <TextView
-            style="@style/RecyclerTitleStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_interests" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_interests"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.RecyclerView>
 
 
-        <TextView
-            style="@style/RecyclerTitleStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_most_watched" />
+            <TextView
+                style="@style/RecyclerTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_interests" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_most_watched"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_interests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.RecyclerView>
 
 
-        <TextView
-            style="@style/RecyclerTitleStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_suggestions" />
+            <TextView
+                style="@style/RecyclerTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_most_watched" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView_suggestions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_most_watched"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+            </android.support.v7.widget.RecyclerView>
 
-</ScrollView>
+
+            <TextView
+                style="@style/RecyclerTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_suggestions" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_suggestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>
