@@ -29,10 +29,12 @@
     <string name="hint_password">Password</string>
     <string name="button_sign_in">Sign In</string>
     <string name="text_forgot_password">Forgot Password?</string>
+    <string name="text_get_help">Get Help</string>
     <string name="text_or">OR</string>
     <string name="text_have_account">Don\'t have an account?</string>
 
-    <!--sign in activity strings-->
+    <!--sign up activity strings-->
+    <string name="hint_username">Username</string>
     <string name="hint_first_name">First Name</string>
     <string name="hint_last_name">Last Name</string>
     <string name="hint_email">Email</string>

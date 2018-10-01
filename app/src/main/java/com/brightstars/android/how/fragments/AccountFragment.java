@@ -1,10 +1,17 @@
 package com.brightstars.android.how.fragments;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +22,20 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.brightstars.android.how.DetailsAccountActivity;
+import com.brightstars.android.how.MainActivity;
 import com.brightstars.android.how.R;
 import com.brightstars.android.how.adapters.AccountAdapter;
 import com.brightstars.android.how.models.AccountItem;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by Afnan A. A. Abed on 9/24/2018.
@@ -51,6 +64,12 @@ public class AccountFragment extends Fragment {
         // TODO: set the user's name, email and image
         accountName.setText("My name");
         accountEmail.setText("myemail@example.com");
+        accountImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewChangeImageDialog();
+            }
+        });
 
         accountItems = getAccountItems();
         accountAdapter = new AccountAdapter(getContext(), R.layout.fragment_account, accountItems);
@@ -95,6 +114,52 @@ public class AccountFragment extends Fragment {
 
         return items;
     }
+
+    // View a dialog to to ask for choosing image confirmation
+    public void viewChangeImageDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("Choose A New Profile Image?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                changeProfileImage();
+                // TODO: Send image to server (work on receiving it)
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.create().show();
+    }
+
+    // Handles transferring to the gallery to choose the profile image
+    public void changeProfileImage() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 1);
+    }
+
+    // Gets back the data of the chosen image from the gallery
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                try {
+                    final Uri imageUri = data.getData();
+                    final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    accountImage.setImageBitmap(selectedImage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                }
+            } else {
+                Toast.makeText(getContext(), "You haven't picked an Image", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
 
 }
 

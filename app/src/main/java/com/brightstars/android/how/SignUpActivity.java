@@ -16,6 +16,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText firstNameField;
     private EditText lastNameField;
+    private EditText usernameField;
     private EditText emailField;
     private EditText phoneField;
     private EditText passwordField;
@@ -30,6 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         firstNameField = findViewById(R.id.input_first_name);
         lastNameField = findViewById(R.id.input_last_name);
+        usernameField = findViewById(R.id.input_user_name);
         emailField = findViewById(R.id.input_email_address);
         phoneField = findViewById(R.id.input_phone_number);
         passwordField = findViewById(R.id.input_password);

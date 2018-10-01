@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:paddingEnd="@dimen/activity_padding"
         android:paddingStart="@dimen/activity_padding"
-        android:paddingTop="@dimen/activity_padding">
+        android:paddingTop="@dimen/horizontal_margin">
 
         <ImageView
             android:layout_width="150dp"
@@ -21,7 +21,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/horizontal_margin_short"
             android:orientation="horizontal">
 
             <EditText
@@ -45,6 +44,13 @@
                 android:inputType="textPersonName" />
 
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/input_user_name"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/horizontal_margin_short"
+            android:hint="@string/hint_username" />
 
         <EditText
             android:id="@+id/input_phone_number"
