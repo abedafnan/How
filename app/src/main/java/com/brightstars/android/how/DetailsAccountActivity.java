@@ -1,6 +1,7 @@
 package com.brightstars.android.how;
 
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,11 +14,14 @@ import android.widget.Toast;
 import com.brightstars.android.how.adapters.RecyclerAdapterDetails;
 import com.brightstars.android.how.models.Item;
 
+import java.sql.Ref;
 import java.util.ArrayList;
 
 public class DetailsAccountActivity extends AppCompatActivity {
 
     private ArrayList<Item> items;
+    private SwipeRefreshLayout refreshLayout;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +29,40 @@ public class DetailsAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details_account);
 
         Intent intent = getIntent();
-        String title = intent.getStringExtra("key_title");
+        title = intent.getStringExtra("key_title");
+
+        refreshLayout = findViewById(R.id.refresh_account_details);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getDetailItems();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.account_details_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        getDetailItems();
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView_account_details);
+
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                String itemChosen = items.get(position).getTitle();
+                playVideo(itemChosen);
+            }
+        });
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void getDetailItems() {
         if (title != null) {
             switch (title) {
                 case ("My List"):
@@ -51,21 +82,7 @@ public class DetailsAccountActivity extends AppCompatActivity {
             Toast.makeText(DetailsAccountActivity.this,
                     "Error loading items because of NPE", Toast.LENGTH_SHORT).show();
         }
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView_account_details);
-
-        LinearLayoutManager layoutManager =
-                new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
-        RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                String itemChosen = items.get(position).getTitle();
-                playVideo(itemChosen);
-            }
-        });
-        recyclerView.setAdapter(adapter);
+        refreshLayout.setRefreshing(false);
     }
 
     // It will start the video activity when a RecyclerView item is clicked

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class NotificationsFragment extends Fragment {
 
     private ListView listView;
     private List<Item> notifications;
+    private SwipeRefreshLayout refreshLayout;
 
     @Nullable
     @Override
@@ -39,6 +41,14 @@ public class NotificationsFragment extends Fragment {
                 (getContext(), R.layout.fragment_notifications, notifications);
         listView.setAdapter(adapter);
 
+        refreshLayout = view.findViewById(R.id.refresh_notifications);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getAllNotifications();
+                refreshLayout.setRefreshing(false);
+            }
+        });
 
         return view;
     }

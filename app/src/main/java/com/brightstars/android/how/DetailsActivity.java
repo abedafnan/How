@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,6 +23,8 @@ import static com.brightstars.android.how.fragments.HomeFragment.ITEM_CATEGORY_C
 public class DetailsActivity extends AppCompatActivity {
 
     private ArrayList<Item> items;
+    private SwipeRefreshLayout refreshLayout;
+    private String itemCategoryChosen;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +32,15 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         Bundle bundle = getIntent().getExtras();
-        String itemCategoryChosen = bundle.getString(ITEM_CATEGORY_CHOOSED);
+        itemCategoryChosen = bundle.getString(ITEM_CATEGORY_CHOOSED);
+
+        refreshLayout = findViewById(R.id.refresh_details);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getDetailItems();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.details_toolbar);
         setSupportActionBar(toolbar);
@@ -38,6 +49,24 @@ public class DetailsActivity extends AppCompatActivity {
         // Setting the title of the toolbar
         getSupportActionBar().setTitle(itemCategoryChosen);
 
+        getDetailItems();
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView_detilsCategory);
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                String itemChosen = items.get(position).getTitle();
+                playVideo(itemChosen);
+            }
+        });
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void getDetailItems() {
         if (itemCategoryChosen != null) {
             switch (itemCategoryChosen) {
                 case ("Electronics"):
@@ -63,20 +92,7 @@ public class DetailsActivity extends AppCompatActivity {
             Toast.makeText(DetailsActivity.this,
                     "Error loading items because of NPE", Toast.LENGTH_SHORT).show();
         }
-        RecyclerView recyclerView = findViewById(R.id.recyclerView_detilsCategory);
-
-        LinearLayoutManager layoutManager =
-                new LinearLayoutManager(this, LinearLayout.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
-        RecyclerAdapterDetails adapter = new RecyclerAdapterDetails(items, new RecyclerAdapterDetails.CustomItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                String itemChosen = items.get(position).getTitle();
-                playVideo(itemChosen);
-            }
-        });
-        recyclerView.setAdapter(adapter);
+        refreshLayout.setRefreshing(false);
     }
 
     // It will start the video activity when a RecyclerView item is clicked

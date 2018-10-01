@@ -15,9 +15,16 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_account_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_account_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"  />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>
