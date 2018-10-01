@@ -64,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView_forgot_password"
                 android:layout_marginBottom="@dimen/horizontal_margin_short"
+                android:layout_marginTop="@dimen/horizontal_margin_short"
                 android:gravity="center"
                 android:orientation="horizontal">
 

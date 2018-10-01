@@ -57,9 +57,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void signUp(View view) {
         if (checkTermsAgreement()) {
+            //TODO: check input validation and send data to server
             String email = emailField.getText().toString().trim();
-            Intent intent = new Intent(this, SignInActivity.class);
-            intent.putExtra("email", email);
+            Intent intent = new Intent(this, InterestsActivity.class);
             startActivity(intent);
             finish();
         }

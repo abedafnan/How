@@ -64,10 +64,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-
-        Intent intent = getIntent();
-        mEmail = intent.getStringExtra("email");
-        emailField.setText(mEmail);
     }
 
     public void signIn(View view) {

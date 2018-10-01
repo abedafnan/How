@@ -25,7 +25,7 @@
     <string name="text_sign_up">Sign Up</string>
 
     <!--sign in activity strings-->
-    <string name="hint_user_name">Email</string>
+    <string name="hint_user_name">Email or Username</string>
     <string name="hint_password">Password</string>
     <string name="button_sign_in">Sign In</string>
     <string name="text_forgot_password">Forgot Password?</string>
@@ -43,11 +43,26 @@
     <!--video activity strings-->
     <string name="text_comment">Write a comment..</string>
 
-    <!--video activity strings-->
+    <!--forgot password activity strings-->
     <string name="reset_button_text">Reset Password</string>
     <string name="text_forgot_pass">Forgot Password ?</string>
     <string name="text_forgot_pass2">We just need your email</string>
     <string name="text_forgot_pass3">so we can send your reset password</string>
+
+    <!--interests activity strings-->
+    <string name="text_choose_interests">Choose Interests..</string>
+    <string name="text_interests1">Add Your Interests</string>
+    <string name="text_interests2">Enter what you like,</string>
+    <string name="text_interests3">and what you are interested in</string>
+
+    <string-array name="interests_array">
+        <item>Electronics</item>
+        <item>Computer</item>
+        <item>Phone</item>
+        <item>Carpentering</item>
+        <item>Plumbing</item>
+        <item>Painting</item>
+    </string-array>
 
     <!--row of items -->
     <string name="text_place_holder">Place Holder</string>
