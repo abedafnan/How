@@ -1,5 +1,6 @@
 package com.brightstars.android.how.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,11 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.brightstars.android.how.DetailsAccountActivity;
 import com.brightstars.android.how.R;
 import com.brightstars.android.how.adapters.AccountAdapter;
 import com.brightstars.android.how.models.AccountItem;
@@ -52,6 +55,17 @@ public class AccountFragment extends Fragment {
         accountItems = getAccountItems();
         accountAdapter = new AccountAdapter(getContext(), R.layout.fragment_account, accountItems);
         listView.setAdapter(accountAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String listTitle = accountItems.get(i).getTitle();
+                // Go to details activity
+                Intent intent = new Intent(getContext(), DetailsAccountActivity.class);
+                intent.putExtra("key_title", listTitle);
+                startActivity(intent);
+            }
+        });
 
         if (getArguments() != null) {
             Bundle bundle = getArguments();

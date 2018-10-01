@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.signin.SignIn;
 
@@ -18,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText phoneField;
     private EditText passwordField;
     private CheckBox checkBox;
+    private TextView termsPrivacyTextView;
     private Button signUpButton;
 
     @Override
@@ -31,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         phoneField = findViewById(R.id.input_phone_number);
         passwordField = findViewById(R.id.input_password);
         checkBox = findViewById(R.id.checkBox);
+        termsPrivacyTextView = findViewById(R.id.text_terms_privacy);
         signUpButton = findViewById(R.id.button_signUp2);
     }
 
@@ -45,7 +49,8 @@ public class SignUpActivity extends AppCompatActivity {
         if (checkBox.isChecked()) {
             return true;
         } else {
-            checkBox.setError("Must agree to the privacy terms");
+            termsPrivacyTextView.setError("Must agree to the privacy terms");
+            Toast.makeText(this, "Must agree to the privacy terms", Toast.LENGTH_SHORT).show();
         }
         return false;
     }
@@ -58,5 +63,9 @@ public class SignUpActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    public void fb_signUp(View view) {
+        // code when pressing the fb sign up button
     }
 }

@@ -19,9 +19,10 @@ import java.util.ArrayList;
 
 import static com.brightstars.android.how.fragments.HomeFragment.ITEM_CATEGORY_CHOOSED;
 
-
 public class DetailsActivity extends AppCompatActivity {
-    ArrayList<Item> items;
+
+    private ArrayList<Item> items;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +80,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     // It will start the video activity when a RecyclerView item is clicked
-    public void playVideo(String videoName) {
+    private void playVideo(String videoName) {
         Intent intent = new Intent(this, VideoActivity.class);
         intent.putExtra("key_video_name", videoName);
         // later video id as well

@@ -32,7 +32,6 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
 
-
         // for facebook server :
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
@@ -99,8 +98,6 @@ public class SignInActivity extends AppCompatActivity {
 
 
     public void button_fb_signIn(View view){
-
-
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
     }
 

@@ -98,7 +98,6 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = interestsItems.get(position).getTitle();
-                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
                         // open video screen
                         Intent intent = new Intent(getContext(), VideoActivity.class);
                         intent.putExtra("key_video_name", itemChosen); // video name to be taken from API
@@ -114,7 +113,6 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = mostWatchedItems.get(position).getTitle();
-                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
                         // open video screen
                         Intent intent = new Intent(getContext(), VideoActivity.class);
                         intent.putExtra("key_video_name", itemChosen);
@@ -130,10 +128,9 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onItemClick(View view, int position) {
                         String itemChosen = suggestionItems.get(position).getTitle();
-                        Toast.makeText(getContext(), itemChosen, Toast.LENGTH_LONG).show();
                         // open video screen
                         Intent intent = new Intent(getContext(), VideoActivity.class);
-                        intent.putExtra("key_video_name", "Video Name");
+                        intent.putExtra("key_video_name", itemChosen);
                         startActivity(intent);
                     }
                 });
